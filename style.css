@@ -104,7 +104,7 @@ p {
 
 
 /* BUTTON PLAY */
-button {
+.button-play {
     position: relative;
     display: flex;
     justify-content: center;
@@ -156,13 +156,13 @@ button {
     left: 102%;
 }
 
-button:hover #rightArrow {
+a:hover #rightArrow {
     background-color: #27c39f;
     left: -20%;
     animation: 0.6s ease-in-out both infinite alternate rightArrow8;
 }
 
-button:hover #leftArrow {
+a:hover #leftArrow {
     background-color: #27c39f;
     left: 110%;
     animation: 0.6s ease-in-out both infinite alternate leftArrow8;
@@ -198,31 +198,31 @@ button:hover #leftArrow {
     left: 88%;
 }
 
-button:hover #leftTop {
+a:hover #leftTop {
     animation: 0.1s ease-in-out 0.05s both changeColor8,
         0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover #rightTop {
+a:hover #rightTop {
     animation: 0.1s ease-in-out 0.15s both changeColor8,
         0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover #rightBottom {
+a:hover #rightBottom {
     animation: 0.1s ease-in-out 0.25s both changeColor8,
         0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover #leftBottom {
+a:hover #leftBottom {
     animation: 0.1s ease-in-out 0.35s both changeColor8,
         0.2s linear 0.4s both lightEffect8;
 }
 
-button:hover .corner {
+a:hover .corner {
     transform: scale(1.25) rotate(45deg);
 }
 
-button:hover #clip {
+a:hover #clip {
     animation: 0.2s ease-in-out 0.55s both greenLight8;
     --color: #27c39f;
 }

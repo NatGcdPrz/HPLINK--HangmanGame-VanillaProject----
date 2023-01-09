@@ -5,12 +5,14 @@ const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
+const song = "/music/notification-echec.mp3";
+const songWin = "/music/notification-win.mp3";
 
 const gameOnBtn = document.getElementById('game-on');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
-const words = ['application', 'programming', 'interface', 'hospitalink'];
+const words = ['application', 'programming', 'interface', 'hospitalink', 'internet', 'multimedia', 'javascript', 'logiciel', 'framework', 'toile', 'referencement'];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
@@ -42,6 +44,7 @@ function displayWord() {
         popup.style.display = 'flex';
 
         playable = false;
+        new Audio(songWin).play();
     }
 }
 
@@ -71,8 +74,10 @@ function updateWrongLettersEl() {
         popup.style.display = 'flex';
 
         playable = false;
+        new Audio(song).play();
     }
 }
+
 
 // Show notification
 function showNotification() {
@@ -114,6 +119,7 @@ window.addEventListener('keydown', e => {
 playAgainBtn.addEventListener('click', () => {
     playable = true;
 
+
     //  Empty arrays
     correctLetters.splice(0);
     wrongLetters.splice(0);
@@ -124,7 +130,11 @@ playAgainBtn.addEventListener('click', () => {
 
     updateWrongLettersEl();
 
+
     popup.style.display = 'none';
+
 });
 
 displayWord();
+
+
