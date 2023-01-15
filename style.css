@@ -274,3 +274,11 @@ a:hover #clip {
         transform: translateX(-10px);
     }
 }
+
+/* Responsive */
+
+@media (max-width: 640px) {
+    .animate-charcter {
+        font-size: 80px;
+    }
+}

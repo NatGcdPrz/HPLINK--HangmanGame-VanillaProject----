@@ -331,7 +331,7 @@ h1 span {
     border-radius: 10px 10px 0 0;
     padding: 15px 20px;
     position: absolute;
-    bottom: -50px;
+    bottom: -500px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -340,5 +340,49 @@ h1 span {
 }
 
 .notification-container.show {
-    transform: translateY(-50px);
+    bottom: 50px;
+}
+
+/* Responsive */
+
+@media (min-width: 350px) and (max-width: 844px) {
+    h1 span {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        align-items: center;
+        font-size: 30px;
+        margin: 0;
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .message {
+        margin-top: 60px;
+    }
+
+    .word {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .notification-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrong-letters-container {
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+    }
 }
