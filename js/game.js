@@ -47,7 +47,7 @@ const play = async () => {
         const innerWord = wordEl.innerText.replace(/[ \n]/g, '');
 
         if (innerWord === niceTryAdam) {
-            finalMessage.innerText = 'Congratulations! You won! 😃';
+            finalMessage.innerText = 'You won tête de fiak 😃';
 
             popup.style.display = 'flex';
 
@@ -77,7 +77,7 @@ const play = async () => {
 
         // Check if lost
         if (wrongLetters.length === figureParts.length) {
-            finalMessage.innerText = 'Unfortunately you lost. 😕';
+            finalMessage.innerText = 'Perdu salle merde 😕';
             finalMessageRevealWord.innerText = `...the word was: ${niceTryAdam}`;
             popup.style.display = 'flex';
 
