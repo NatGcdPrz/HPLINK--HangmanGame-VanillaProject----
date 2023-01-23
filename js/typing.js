@@ -1,27 +1,3 @@
-// FireBase
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyAuUQzH5fm58iW8i-QtuYn4fsOuwyV23Fw",
-    authDomain: "geekinside-2bb8f.firebaseapp.com",
-    databaseURL: "https://geekinside-2bb8f-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "geekinside-2bb8f",
-    storageBucket: "geekinside-2bb8f.appspot.com",
-    messagingSenderId: "306151598455",
-    appId: "1:306151598455:web:64066a5ae277de227fd972",
-    measurementId: "G-125XYP2R71"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 // Project
 const word = document.getElementById('word');
 const text = document.getElementById('text');
