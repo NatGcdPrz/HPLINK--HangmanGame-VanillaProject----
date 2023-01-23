@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/breakout.css" />
+    <title>Breakout!</title>
+</head>
+
+<body>
+    <div class="loader">
+        <i class="spinner"></i>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="animate-charcter"> BREAKOUT !</h1>
+            </div>
+        </div>
+    </div>
+    <button id="rules-btn" class="btn rules-btn">
+        <span>Show Rules</span>
+    </button>
+    <div id="rules" class="rules">
+        <h2>How To Play:</h2>
+        <p>
+            Use your right and left keys to move the paddle to bounce the ball up
+            and break the blocks.
+        </p>
+        <p>If you miss the ball, your score and the blocks will reset.</p>
+        <button id="close-btn" class="btn">
+            <span>Close</span>
+        </button>
+    </div>
+
+    <canvas id="canvas" width="800" height="600"></canvas>
+
+    <!--Btn SpeakNumber-->
+    <div class="container-2">
+        <a class="other-game" href="/html/typing.html">
+            <button>LUI AUSSI IL EST RELOU...</button></a>
+    </div>
+
+    <script src="/js/breakout.js"></script>
+</body>
+
+</html>

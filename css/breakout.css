@@ -1,0 +1,226 @@
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 45px;
+    color: grey;
+}
+
+.animate-charcter {
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Loader animation */
+.loader {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    inset: 0;
+    height: 100vh;
+    z-index: 2;
+    background-color: #0f0f0f;
+    opacity: 0.9;
+    animation: disappear 200ms 1s forwards;
+    transform-origin: top;
+}
+
+.loader .spinner {
+    width: 88px;
+    height: 88px;
+    display: grid;
+    border: 7px solid rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    border-color: #efdbef rgba(0, 0, 0, 0);
+    animation: spinner-load 1s infinite linear;
+}
+
+.loader .spinner::before,
+.loader .spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 3.5px;
+    border: inherit;
+    border-radius: 50%;
+}
+
+.loader .spinner::before {
+    border-color: #ab23fb rgba(0, 0, 0, 0);
+    animation: inherit;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+}
+
+.loader .spinner::after {
+    margin: 14px;
+}
+
+/*Loader disappear*/
+@keyframes disappear {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+/*Spinner loader*/
+@keyframes spinner-load {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+canvas {
+    background-color: white;
+    display: block;
+    border-radius: 5px;
+    margin: 40px;
+}
+
+button {
+    align-items: center;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+button:active,
+button:hover {
+    outline: 0;
+}
+
+button span {
+    background-color: rgb(5, 6, 45);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+button:hover span {
+    background: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 20x;
+    background-color: aquamarine;
+    color: black;
+    border-radius: 5px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:hover {
+    background-color: #8a2be2;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.rules-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.rules {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #333;
+    color: white;
+    min-height: 100vh;
+    width: 300px;
+    padding: 20px;
+    line-height: 1.5;
+    transform: translateX(-400px);
+    transition: transform 1s ease-in-out;
+}
+
+.rules.show {
+    transform: translateX(0);
+}
+
+/* Btn speak */
+.other-game {
+    text-decoration: none;
+}
+
+.container-2 button {
+    padding: 0.6em 1em;
+    border: 4px solid #fa725a;
+    transition: ease-in-out 0.3s;
+    background-color: transparent;
+    color: #fa725a;
+    font-weight: bolder;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.container-2 button:hover {
+    transform: scale(1.2) rotate(10deg);
+    background-color: #fa725a;
+    color: white;
+    cursor: pointer;
+}
