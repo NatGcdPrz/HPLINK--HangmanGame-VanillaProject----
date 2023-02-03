@@ -1,3 +1,6 @@
+import { setScoreBreakout } from '../firebase/setScore.js';
+import { displayPseudo } from '../helpers/displayPseudo.js';
+
 const rulesBtn = document.getElementById('rules-btn');
 const closeBtn = document.getElementById('close-btn');
 const rules = document.getElementById('rules');
@@ -9,6 +12,8 @@ let score = 0;
 const brickRowCount = 9;
 const brickColumnCount = 5;
 const delay = 500; //delay to reset the game
+
+displayPseudo();
 
 // Create ball props
 const ball = {
@@ -161,7 +166,7 @@ function increaseScore() {
     score++;
 
     if (score % (brickRowCount * brickColumnCount) === 0) {
-
+        setScoreBreakout(score);
         ball.visible = false;
         paddle.visible = false;
 

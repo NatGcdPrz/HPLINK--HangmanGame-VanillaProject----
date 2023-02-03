@@ -23,8 +23,9 @@
         <h3>ARE YOU READY ?</h3>
     </div>
 
+
     <div class="container-2">
-        <a class="button-play" href="/html/game.html">
+        <a class="button-play modal-btn">
             P L A Y
             <div id="clip">
                 <div id="leftTop" class="corner"></div>
@@ -36,6 +37,29 @@
             <span id="leftArrow" class="arrow"></span>
         </a>
     </div>
+
+    <div id="score-board"></div>
+
+    <div class="bground">
+        <div class="content">
+            <span class="close"></span>
+            <div class="modal-body">
+                <form id="form" name="reserve" action="index.html" method="get" onsubmit="return validate();">
+
+                    <div class="formData">
+                        <label for="pseudo">Choisis ton pseudo</label><br>
+                        <input class="text-control" type="text" id="pseudo" name="first" /><br>
+                    </div>
+                    <div id="namesList"></div>
+                    <input class="btn-submit button" id="submit" type="submit" value="C'est parti !" />
+                </form>
+                <div class="validation">
+                    <p>Merci ! <br> T'es prêt(e) ?!</p>
+                    <a href="/html/handmanGame.html"><button class="button btn-close btn-geek">GEEK</button></a>
+                </div>
+
+                <script type="module" src="./js/displayUsers.js"></script>
+                <script type="module" src="./js/form/handleFormPseudo.js"></script>
 </body>
 
 </html>

@@ -192,3 +192,46 @@ input {
     height: 100%;
     z-index: 1;
 }
+
+#score-board {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+}
+
+.container-error {
+    box-shadow: 0px 0px 15px 5px #e54858;
+    transition: 0.3s;
+    animation: shake 200ms linear infinite;
+}
+
+.container[data-error-visible="true"]::after {
+    opacity: 1;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(5px)
+    }
+
+    50% {
+        transform: translateX(-5px)
+    }
+
+    75% {
+        transform: translateX(5px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+#display-pseudo {
+    background-color: red;
+}

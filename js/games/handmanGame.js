@@ -1,3 +1,6 @@
+import { setScore } from '../firebase/setScore.js';
+import { displayPseudo } from '../helpers/displayPseudo.js';
+
 const wordEl = document.getElementById('word');
 const wrongLettersEl = document.getElementById('wrong-letters');
 const playAgainBtn = document.getElementById('play-button');
@@ -12,6 +15,8 @@ const gameOnBtn = document.getElementById('game-on');
 
 const figureParts = document.querySelectorAll('.figure-part');
 const API_URL = 'https://random-word-api.herokuapp.com/word?number=200&lang=en';
+
+displayPseudo();
 
 async function getWords() {
     const data = await fetch(API_URL);
@@ -78,6 +83,7 @@ const play = async () => {
         // Check if lost
         if (wrongLetters.length === figureParts.length) {
             finalMessage.innerText = 'Perdu 😕';
+
             finalMessageRevealWord.innerText = `...le mot était: ${niceTryAdam}`;
             popup.style.display = 'flex';
 
@@ -147,3 +153,4 @@ const play = async () => {
 }
 
 play();
+

@@ -1,3 +1,8 @@
+import { setScoreTyping } from '../firebase/setScore.js';
+import { displayPseudo } from '../helpers/displayPseudo.js';
+
+displayPseudo();
+
 // Project
 const word = document.getElementById('word');
 const text = document.getElementById('text');
@@ -8,6 +13,9 @@ const settingsBtn = document.getElementById('settings-btn');
 const settings = document.getElementById('settings');
 const settingsForm = document.getElementById('settings-form');
 const difficultySelect = document.getElementById('difficulty');
+const container = document.getElementById('container');
+
+
 
 // List of words for game
 const words = [
@@ -36,7 +44,7 @@ let randomWord;
 let score = 0;
 
 // Init time
-let time = 15;
+let time = 20;
 
 // Set difficulty to value in ls or medium
 let difficulty =
@@ -94,14 +102,17 @@ function gameOver() {
   `;
 
     endgameEl.style.display = 'flex';
+
+    setScoreTyping(score);
 }
 
 addWordToDOM();
 
-// Event listeners
 
+// Event listeners
 // Typing
 text.addEventListener('input', e => {
+
     const insertedText = e.target.value;
 
     if (insertedText === randomWord) {
@@ -120,8 +131,22 @@ text.addEventListener('input', e => {
         }
 
         updateTime();
+    } else if (insertedText.length === randomWord.length) {
+
+        displayErrorWord(container);
+
+        // Clear
+        e.target.value = '';
     }
 });
+
+// Function error word
+const displayErrorWord = (element) => {
+    element.classList.add("container-error");
+    setTimeout(() => {
+        element.classList.remove("container-error");
+    }, 800)
+}
 
 // Settings btn click
 settingsBtn.addEventListener('click', () => settings.classList.toggle('hide'));
@@ -131,3 +156,4 @@ settingsForm.addEventListener('change', e => {
     difficulty = e.target.value;
     localStorage.setItem('difficulty', difficulty);
 });
+
