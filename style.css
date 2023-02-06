@@ -490,3 +490,131 @@ input[data-error]::after {
     text-align: center;
     color: #000000;
 }
+
+.my-score {
+    color: #a251fa;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.score-container {
+    width: 450px;
+    height: 850px;
+    border-radius: 20px;
+    padding: 20px 30px 20px 10px;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    background: rgb(19, 19, 19);
+    border-radius: 17px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#score-board {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+button {
+    align-items: center;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+button:active,
+button:hover {
+    outline: 0;
+}
+
+#close-btn {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+button span {
+    background-color: rgb(5, 6, 45);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+button:hover span {
+    background: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 20x;
+    background-color: aquamarine;
+    color: black;
+    border-radius: 5px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:hover {
+    background-color: #8a2be2;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.score-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.score {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #333;
+    color: white;
+    min-height: 100vh;
+    width: 500px;
+    padding: 20px;
+    line-height: 1.5;
+    transform: translateX(-800px);
+    transition: transform 1s ease-in-out;
+}
+
+.score.show {
+    transform: translateX(0);
+}

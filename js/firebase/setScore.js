@@ -39,7 +39,7 @@ const setScoreBreakout = async (score) => {
         games: {
             typing: +typingScore,
             handman: +handmanScore,
-            breakout: +score
+            breakout: +score //+highScore
         }
     })
 

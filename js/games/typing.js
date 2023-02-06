@@ -1,7 +1,6 @@
 import { setScoreTyping } from '../firebase/setScore.js';
 import { displayPseudo } from '../helpers/displayPseudo.js';
 
-displayPseudo();
 
 // Project
 const word = document.getElementById('word');

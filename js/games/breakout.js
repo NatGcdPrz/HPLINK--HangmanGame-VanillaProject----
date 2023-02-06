@@ -8,6 +8,16 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let score = 0;
+/*let highScore = localStorage.getItem("highScore");
+
+const setHighScore = () => {
+    if (highScore !== null) {
+        if (score > highScore) {
+            localStorage.setItem("highScore");
+        }
+    } else {
+        localStorage.setItem("highScore", score);
+    }*/
 
 const brickRowCount = 9;
 const brickColumnCount = 5;
@@ -20,7 +30,7 @@ const ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
     size: 10,
-    speed: 4,
+    speed: 1,
     dx: 4,
     dy: -4,
     visible: true
@@ -30,7 +40,7 @@ const ball = {
 const paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 20,
-    w: 80,
+    w: 120,
     h: 10,
     speed: 8,
     dx: 0,
@@ -169,6 +179,7 @@ function increaseScore() {
         setScoreBreakout(score);
         ball.visible = false;
         paddle.visible = false;
+
 
         //After 0.5 sec restart the game
         setTimeout(function () {

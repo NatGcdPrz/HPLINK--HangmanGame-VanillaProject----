@@ -37,29 +37,41 @@
             <span id="leftArrow" class="arrow"></span>
         </a>
     </div>
+    <button id="score-btn" class="btn score-btn">
+        <span>Show Scores</span>
+    </button>
+    <div id="score" class="score">
+        <div class="score-container">
+            <h2 class="my-score">Score Board</h2>
+            <div id="score-board">
+            </div>
+            <button id="close-btn" class="btn">
+                <span>Close</span>
+            </button>
 
-    <div id="score-board"></div>
+        </div>
 
-    <div class="bground">
-        <div class="content">
-            <span class="close"></span>
-            <div class="modal-body">
-                <form id="form" name="reserve" action="index.html" method="get" onsubmit="return validate();">
+        <div class="bground">
+            <div class="content">
+                <span class="close"></span>
+                <div class="modal-body">
+                    <form id="form" name="reserve" action="index.html" method="get" onsubmit="return validate();">
 
-                    <div class="formData">
-                        <label for="pseudo">Choisis ton pseudo</label><br>
-                        <input class="text-control" type="text" id="pseudo" name="first" /><br>
+                        <div class="formData">
+                            <label for="pseudo">Choisis ton pseudo</label><br>
+                            <input class="text-control" type="text" id="pseudo" name="first" /><br>
+                        </div>
+                        <div id="namesList"></div>
+                        <input class="btn-submit button" id="submit" type="submit" value="C'est parti !" />
+                    </form>
+                    <div class="validation">
+                        <p>Merci ! <br> T'es prêt(e) ?!</p>
+                        <a href="/html/handmanGame.html"><button class="button btn-close btn-geek">GEEK</button></a>
                     </div>
-                    <div id="namesList"></div>
-                    <input class="btn-submit button" id="submit" type="submit" value="C'est parti !" />
-                </form>
-                <div class="validation">
-                    <p>Merci ! <br> T'es prêt(e) ?!</p>
-                    <a href="/html/handmanGame.html"><button class="button btn-close btn-geek">GEEK</button></a>
-                </div>
 
-                <script type="module" src="./js/displayUsers.js"></script>
-                <script type="module" src="./js/form/handleFormPseudo.js"></script>
+                    <script type="module" src="./js/helpers/displayScore.js"></script>
+                    <script type="module" src="./js/displayUsers.js"></script>
+                    <script type="module" src="./js/form/handleFormPseudo.js"></script>
 </body>
 
 </html>
