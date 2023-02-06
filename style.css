@@ -613,6 +613,7 @@ button:active {
     line-height: 1.5;
     transform: translateX(-800px);
     transition: transform 1s ease-in-out;
+    z-index: 50;
 }
 
 .score.show {
