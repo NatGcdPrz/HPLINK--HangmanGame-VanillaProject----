@@ -8,6 +8,8 @@ const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
+const songEchec = new Audio('/music/notification-echec.mp3');
+const songWin = new Audio('/music/notification-win.mp3');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
@@ -77,7 +79,7 @@ function displayWord() {
         popup.style.display = 'flex';
 
         playable = false;
-        new Audio(songWin).play();
+        songWin.play();
     }
 }
 
@@ -107,7 +109,7 @@ function updateWrongLettersEl() {
         popup.style.display = 'flex';
 
         playable = false;
-        new Audio(song).play();
+        songEchec.play();
     }
 }
 
