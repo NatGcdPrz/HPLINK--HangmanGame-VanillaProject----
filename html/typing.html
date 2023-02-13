@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <div class="loader">
+        <i class="spinner"></i>
+    </div>
 
 
     <button id="settings-btn" class="settings-btn">
@@ -41,7 +44,7 @@
         <input type="text" id="text" autocomplete="off" placeholder="Type the word here...">
 
         <p class="time-container">
-            Time left: <span id="time">15s</span>
+            Time left: <span id="time">20s</span>
         </p>
 
         <p class="score-container">Score: <span id="score">0</span></p>
@@ -49,9 +52,14 @@
         <div id="end-game-container" class="end-game-container"></div>
     </div>
 
+    <button id="start_timer" type="button"><span class="button-content">S T A R T</span></button>
+
     <div class="classement">
 
     </div>
+
+    <!--Btn accueil -->
+    <button class="btn-home" onclick="window.location.href='/index.html'">HOME</button>
 
     <script src="../js/games/typing.js" type="module"></script>
 </body>

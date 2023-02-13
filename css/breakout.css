@@ -15,6 +15,74 @@ h1 {
     color: grey;
 }
 
+/* BTN ACCUEIL */
+.btn-home {
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 1em 2em;
+    border: 0;
+    background-color: black;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.btn-home::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(#488cfb,
+            #29dbbc,
+            #ddf505,
+            #ff9f0e,
+            #e440bb,
+            #655adc,
+            #488cfb);
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+}
+
+.btn-home:hover::after {
+    animation-play-state: running;
+}
+
+@keyframes rotate-hue {
+    to {
+        filter: hue-rotate(1turn);
+    }
+}
+
+.btn-home,
+.btn-home::after {
+    box-sizing: border-box;
+}
+
+.btn-home:active {
+    --border-width: 5px;
+}
+
 .animate-charcter {
     text-transform: uppercase;
     background-image: linear-gradient(-225deg,
@@ -109,7 +177,7 @@ canvas {
     margin: 40px;
 }
 
-button {
+.rules-btn {
     align-items: center;
     background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
     border: 0;

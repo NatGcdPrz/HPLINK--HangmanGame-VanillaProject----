@@ -54,7 +54,7 @@ p {
 /* CARD ANIMATION */
 .card {
     width: 290px;
-    height: 354px;
+    height: 700px;
     background: #07182E;
     position: relative;
     display: flex;
@@ -277,11 +277,30 @@ a:hover #clip {
 
 /* Responsive */
 
-@media (max-width: 640px) {
+@media (max-width: 850px) {
     .animate-charcter {
         font-size: 80px;
     }
+
+    #score-btn {
+        position: relative;
+        margin-right: 50px;
+    }
+
+    .score-btn {
+        position: absolute;
+        bottom: 50px;
+    }
+
+    .score {
+        min-width: 50vh;
+    }
+
+    .score-container {
+        min-width: 50vh;
+    }
 }
+
 
 /* FORM */
 .bground {
@@ -434,7 +453,7 @@ input {
 
 .btn-geek {
     position: absolute;
-    left: 43%;
+    left: 36%;
     top: 150px;
 }
 
@@ -515,10 +534,41 @@ input[data-error]::after {
 }
 
 #score-board {
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    flex-flow: row wrap;
     text-align: center;
+}
+
+#score-board span {
+    --hover-shadows: 16px 16px 33px #121212,
+        -16px -16px 33px #303030;
+    --accent: fuchsia;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: #212121;
+    color: white;
+    padding: 0.5em 1.5em;
+    margin: 20px;
+    box-shadow: 13px 13px 10px #131313,
+        -10px -10px 10px #161616;
+    text-align: center;
+}
+
+#score-board ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 20px;
+}
+
+#score-board li {
+    margin: 0 15px 15px 0;
+    font-size: 1.1em;
 }
 
 button {

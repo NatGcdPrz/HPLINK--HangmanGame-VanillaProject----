@@ -17,6 +17,8 @@ const setScore = async (score) => {
 const setScoreTyping = async (score) => {
     const handmanScore = localStorage.getItem("handman");
     const breakoutScore = localStorage.getItem("breakout");
+    const typingScoreFromLocalStorage = localStorage.getItem("typing");
+    if (score <= typingScoreFromLocalStorage) return;
     const userId = localStorage.getItem("id");
     const user = doc(firebaseApp, 'Users', userId);
     const userCreated = await updateDoc(user, {
@@ -26,23 +28,26 @@ const setScoreTyping = async (score) => {
             breakout: +breakoutScore
         }
     })
-
+    localStorage.setItem("typing", score);
     return userCreated;
 }
 
 const setScoreBreakout = async (score) => {
     const handmanScore = localStorage.getItem("handman");
     const typingScore = localStorage.getItem("typing");
+    const breakoutScoreFromLocalStorage = localStorage.getItem("breakout");
+    if (score <= breakoutScoreFromLocalStorage) return;
     const userId = localStorage.getItem("id");
     const user = doc(firebaseApp, 'Users', userId);
     const userCreated = await updateDoc(user, {
         games: {
             typing: +typingScore,
             handman: +handmanScore,
-            breakout: +score //+highScore
+            breakout: +score
         }
     })
 
+    localStorage.setItem("breakout", score);
     return userCreated;
 }
 

@@ -8,16 +8,6 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let score = 0;
-/*let highScore = localStorage.getItem("highScore");
-
-const setHighScore = () => {
-    if (highScore !== null) {
-        if (score > highScore) {
-            localStorage.setItem("highScore");
-        }
-    } else {
-        localStorage.setItem("highScore", score);
-    }*/
 
 const brickRowCount = 9;
 const brickColumnCount = 5;
@@ -30,7 +20,7 @@ const ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
     size: 10,
-    speed: 1,
+    speed: 1, // multiplier mon score par la vitesse  score *  2 LIGNES ARRETE DE CASSER LES COUILLES 
     dx: 4,
     dy: -4,
     visible: true
@@ -40,7 +30,7 @@ const ball = {
 const paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 20,
-    w: 120,
+    w: 120, // diviser la width par mon score 
     h: 10,
     speed: 8,
     dx: 0,
@@ -174,9 +164,21 @@ function moveBall() {
 // Increase score
 function increaseScore() {
     score++;
+    setScoreBreakout(score);
+
+    if (score > 3) {
+        ball.speed = 3;
+    } else {
+        ball.speed = 1;
+    }
+
+    if (score > 3) {
+        paddle.w = 90;
+    } else {
+        paddle.w = 120;
+    }
 
     if (score % (brickRowCount * brickColumnCount) === 0) {
-        setScoreBreakout(score);
         ball.visible = false;
         paddle.visible = false;
 

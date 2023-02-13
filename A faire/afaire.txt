@@ -1,0 +1,16 @@
+1. Refaire le CSS du score board ---> FAIT
+2. Refaire le css du bouton "geek" ---> FAIT
+3. Faire le highScore pour le breakout ---> FAIT
+4. Faire le responsive ---> EN COURS
+5. Changer le coefficient vitesse de la balle ---> FAIT
+6. Changer la taille de la plateforme en fonction du score ---> FAIT
+7. Mettre des mots en français pour le pendu ---> FAIT
+8. Ajout bouton accueil sur toutes les pages ---> FAIT
+9. Le typing ne demarre pas quand j'arrive sur la page, il demarre soit quand je commence à taper soit avec un bouton --> FAIT
+10. Mettre le high score sur typing ---> FAIT
+
+
+
+
+
+   

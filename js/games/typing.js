@@ -60,8 +60,21 @@ difficultySelect.value =
 // Focus on text on start
 text.focus();
 
+
 // Start counting down
-const timeInterval = setInterval(updateTime, 1000);
+function startTimer() {
+    const timeInterval = setInterval(updateTime, 1000);
+    if (time === 0) {
+        clearInterval(timeInterval);
+    }
+}
+
+// Start time
+let buttonStart = document.getElementById("start_timer");
+
+buttonStart.addEventListener("click", function () {
+    startTimer();
+})
 
 // Generate random word from array
 function getRandomWord() {
@@ -86,7 +99,6 @@ function updateTime() {
     timeEl.innerHTML = time + 's';
 
     if (time === 0) {
-        clearInterval(timeInterval);
         // end game
         gameOver();
     }
